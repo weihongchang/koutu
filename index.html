@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -40,136 +41,186 @@
             opacity: 0.9;
         }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .nav-section {
+        .upload-section {
             background: white;
             border-radius: 15px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .nav-section h2 {
-            color: #333;
             margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 60px 20px;
             text-align: center;
-            font-size: 1.8rem;
-        }
-
-        .nav-list {
-            list-style: none;
-        }
-
-        .nav-item {
-            margin-bottom: 15px;
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #333;
+            cursor: pointer;
             transition: all 0.3s ease;
+            margin-bottom: 30px;
         }
 
-        .nav-link:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            transform: translateX(10px);
+        .upload-area:hover {
+            background: #f8f9fa;
+            border-color: #764ba2;
         }
 
-        .nav-link-number {
-            width: 40px;
-            height: 40px;
-            background: #667eea;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 20px;
-            transition: background 0.3s ease;
+        .upload-area.dragover {
+            background: #e3f2fd;
+            border-color: #2196F3;
         }
 
-        .nav-link:hover .nav-link-number {
-            background: white;
-            color: #667eea;
+        .upload-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
         }
 
-        .nav-link-text {
-            flex: 1;
-        }
-
-        .nav-link-text h3 {
-            margin-bottom: 5px;
+        .upload-text {
+            color: #666;
             font-size: 1.1rem;
         }
 
-        .nav-link-text p {
-            color: #666;
-            font-size: 0.9rem;
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 10px;
         }
 
-        .nav-link:hover .nav-link-text p {
-            color: rgba(255,255,255,0.8);
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(86, 171, 47, 0.4);
+        }
+
+        .image-preview-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .image-card h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .placeholder-text {
+            color: #999;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            color: #dc3545;
+            text-align: center;
+            padding: 15px;
+            background: #f8d7da;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error-message.active {
+            display: block;
         }
 
         @media (max-width: 768px) {
-            .feature-grid {
+            .image-preview-section {
                 grid-template-columns: 1fr;
             }
             
             .header h1 {
                 font-size: 2rem;
+            }
+            
+            .image-container {
+                height: 300px;
             }
         }
     </style>
@@ -181,146 +232,166 @@
             <p>快速、简单、高效的图片背景移除解决方案</p>
         </header>
 
-        <div class="feature-grid">
-            <a href="#quick-start" class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h2>快速开始</h2>
-                <p>几分钟内完成环境配置，开始使用去背景处理</p>
-            </a>
-            <a href="#features" class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h2>功能特性</h2>
-                <p>强大的AI驱动，精准识别前景与背景分离技术</p>
-            </a>
-            <a href="#usage" class="feature-card">
-                <div class="feature-icon">📖</div>
-                <h2>使用说明</h2>
-                <p>详细的步骤指导，轻松上手</p>
-            </a>
+        <section class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">点击或拖拽图片到此处上传</div>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            
+            <div class="error-message" id="errorMessage"></div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>正在处理图片，请稍候...</p>
+            </div>
+        </section>
+
+        <section class="image-preview-section" id="imageSection" style="display: none;">
+            <div class="image-card">
+                <h3>原始图片</h3>
+                <div class="image-container">
+                    <img id="originalImage" src="" alt="原始图片">
+                </div>
+            </div>
+            <div class="image-card">
+                <h3>处理后图片</h3>
+                <div class="image-container">
+                    <img id="processedImage" src="" alt="处理后图片">
+                </div>
+            </div>
+        </section>
+
+        <div class="button-group" id="buttonGroup" style="display: none;">
+            <button class="btn btn-primary" id="processBtn" disabled>开始处理</button>
+            <button class="btn btn-success" id="downloadBtn" style="display: none;">下载图片</button>
         </div>
-
-        <section class="nav-section" id="quick-start">
-            <h2>🚀 快速开始</h2>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="#install-python" class="nav-link">
-                        <div class="nav-link-number">1</div>
-                        <div class="nav-link-text">
-                            <h3>安装Python环境</h3>
-                            <p>下载并安装Python 3.7或更高版本</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#install-deps" class="nav-link">
-                        <div class="nav-link-number">2</div>
-                        <div class="nav-link-text">
-                            <h3>安装依赖库</h3>
-                            <p>运行pip install安装必要的Python包</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#run-script" class="nav-link">
-                        <div class="nav-link-number">3</div>
-                        <div class="nav-link-text">
-                            <h3>运行程序</h3>
-                            <p>执行removeBackground.py开始处理图片</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <section class="nav-section" id="features">
-            <h2>✨ 功能特性</h2>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="#ai-removal" class="nav-link">
-                        <div class="nav-link-number">1</div>
-                        <div class="nav-link-text">
-                            <h3>AI智能识别</h3>
-                            <p>基于深度学习的智能前景背景分离</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#batch-process" class="nav-link">
-                        <div class="nav-link-number">2</div>
-                        <div class="nav-link-text">
-                            <h3>批量处理</h3>
-                            <p>支持多张图片快速处理</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#transparent" class="nav-link">
-                        <div class="nav-link-number">3</div>
-                        <div class="nav-link-text">
-                            <h3>透明背景</h3>
-                            <p>输出PNG格式，支持透明背景</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#high-quality" class="nav-link">
-                        <div class="nav-link-number">4</div>
-                        <div class="nav-link-text">
-                            <h3>高质量输出</h3>
-                            <p>保持原图分辨率和细节</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <section class="nav-section" id="usage">
-            <h2>📖 使用说明</h2>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="#prepare-image" class="nav-link">
-                        <div class="nav-link-number">1</div>
-                        <div class="nav-link-text">
-                            <h3>准备图片</h3>
-                            <p>将待处理图片命名为input.jpg放入目录</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#execute" class="nav-link">
-                        <div class="nav-link-number">2</div>
-                        <div class="nav-link-text">
-                            <h3>执行脚本</h3>
-                            <p>运行python removeBackground.py</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#get-result" class="nav-link">
-                        <div class="nav-link-number">3</div>
-                        <div class="nav-link-text">
-                            <h3>获取结果</h3>
-                            <p>处理完成后在output.png查看结果</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </section>
     </div>
 
     <script>
-        // 平滑滚动效果
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const originalImage = document.getElementById('originalImage');
+        const processedImage = document.getElementById('processedImage');
+        const processBtn = document.getElementById('processBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const loading = document.getElementById('loading');
+        const errorMessage = document.getElementById('errorMessage');
+        const imageSection = document.getElementById('imageSection');
+        const buttonGroup = document.getElementById('buttonGroup');
+        
+        let currentFile = null;
+        let processedImageData = null;
+
+        // 点击上传区域
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // 文件选择
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        // 拖拽事件
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            if (e.dataTransfer.files.length > 0) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                showError('请选择有效的图片文件');
+                return;
+            }
+
+            currentFile = file;
+            hideError();
+            
+            // 预览图片
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                originalImage.src = e.target.result;
+                imageSection.style.display = 'grid';
+                buttonGroup.style.display = 'block';
+                processBtn.disabled = false;
+                downloadBtn.style.display = 'none';
+                processedImage.src = '';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('active');
+        }
+
+        function hideError() {
+            errorMessage.classList.remove('active');
+        }
+
+        // 处理图片
+        processBtn.addEventListener('click', async () => {
+            if (!currentFile) return;
+
+            const formData = new FormData();
+            formData.append('file', currentFile);
+
+            loading.classList.add('active');
+            processBtn.disabled = true;
+            hideError();
+
+            try {
+                const response = await fetch('upload.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || '处理图片失败');
                 }
-            });
+
+                // 获取处理后的图片
+                const blob = await response.blob();
+                processedImageData = blob;
+                const url = URL.createObjectURL(blob);
+                processedImage.src = url;
+                downloadBtn.style.display = 'inline-block';
+            } catch (error) {
+                showError(error.message);
+            } finally {
+                loading.classList.remove('active');
+                processBtn.disabled = false;
+            }
+        });
+
+        // 下载图片
+        downloadBtn.addEventListener('click', () => {
+            if (!processedImageData) return;
+            
+            const url = URL.createObjectURL(processedImageData);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'result.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         });
     </script>
 </body>

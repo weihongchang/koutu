@@ -2,3 +2,4 @@
 rembg
 numpy
 Pillow
+Flask
