@@ -6,3 +6,6 @@
 2.安装依赖库
 python -m pip install -r requirements.txt --no-warn-script-location
 
+pip install -r requirements.txt
+
+

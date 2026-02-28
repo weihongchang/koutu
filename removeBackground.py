@@ -25,8 +25,8 @@ def remove_background(input_path, output_path):
 
 if __name__ == "__main__":
     # 检查是否提供了足够的命令行参数
-    if len(sys.argv) > 3:
-        print("使用方法: python removeBackground.py &lt;输入图片路径&gt; &lt;输出图片路径&gt;")
+    if len(sys.argv) < 3:
+        print("使用方法: python removeBackground.py <输入图片路径> <输出图片路径>")
         sys.exit(1)
     
     # 从命令行参数获取输入输出路径
