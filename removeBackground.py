@@ -22,7 +22,7 @@ def remove_background(input_path, output_path):
 
 if __name__ == "__main__":
     # 设置输入输出路径
-    input_image_path = "input.png"   # 输入图片
+    input_image_path = "input.jpg"   # 输入图片
     output_image_path = "output.png" # 输出透明背景图片
 
     # 检查输入文件是否存在

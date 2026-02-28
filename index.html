@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片去背景工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .nav-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .nav-section h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .nav-link-number {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover .nav-link-number {
+            background: white;
+            color: #667eea;
+        }
+
+        .nav-link-text {
+            flex: 1;
+        }
+
+        .nav-link-text h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .nav-link-text p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover .nav-link-text p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>图片去背景工具</h1>
+            <p>快速、简单、高效的图片背景移除解决方案</p>
+        </header>
+
+        <div class="feature-grid">
+            <a href="#quick-start" class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h2>快速开始</h2>
+                <p>几分钟内完成环境配置，开始使用去背景处理</p>
+            </a>
+            <a href="#features" class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h2>功能特性</h2>
+                <p>强大的AI驱动，精准识别前景与背景分离技术</p>
+            </a>
+            <a href="#usage" class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h2>使用说明</h2>
+                <p>详细的步骤指导，轻松上手</p>
+            </a>
+        </div>
+
+        <section class="nav-section" id="quick-start">
+            <h2>🚀 快速开始</h2>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#install-python" class="nav-link">
+                        <div class="nav-link-number">1</div>
+                        <div class="nav-link-text">
+                            <h3>安装Python环境</h3>
+                            <p>下载并安装Python 3.7或更高版本</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#install-deps" class="nav-link">
+                        <div class="nav-link-number">2</div>
+                        <div class="nav-link-text">
+                            <h3>安装依赖库</h3>
+                            <p>运行pip install安装必要的Python包</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#run-script" class="nav-link">
+                        <div class="nav-link-number">3</div>
+                        <div class="nav-link-text">
+                            <h3>运行程序</h3>
+                            <p>执行removeBackground.py开始处理图片</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="nav-section" id="features">
+            <h2>✨ 功能特性</h2>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#ai-removal" class="nav-link">
+                        <div class="nav-link-number">1</div>
+                        <div class="nav-link-text">
+                            <h3>AI智能识别</h3>
+                            <p>基于深度学习的智能前景背景分离</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#batch-process" class="nav-link">
+                        <div class="nav-link-number">2</div>
+                        <div class="nav-link-text">
+                            <h3>批量处理</h3>
+                            <p>支持多张图片快速处理</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#transparent" class="nav-link">
+                        <div class="nav-link-number">3</div>
+                        <div class="nav-link-text">
+                            <h3>透明背景</h3>
+                            <p>输出PNG格式，支持透明背景</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#high-quality" class="nav-link">
+                        <div class="nav-link-number">4</div>
+                        <div class="nav-link-text">
+                            <h3>高质量输出</h3>
+                            <p>保持原图分辨率和细节</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="nav-section" id="usage">
+            <h2>📖 使用说明</h2>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#prepare-image" class="nav-link">
+                        <div class="nav-link-number">1</div>
+                        <div class="nav-link-text">
+                            <h3>准备图片</h3>
+                            <p>将待处理图片命名为input.jpg放入目录</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#execute" class="nav-link">
+                        <div class="nav-link-number">2</div>
+                        <div class="nav-link-text">
+                            <h3>执行脚本</h3>
+                            <p>运行python removeBackground.py</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#get-result" class="nav-link">
+                        <div class="nav-link-number">3</div>
+                        <div class="nav-link-text">
+                            <h3>获取结果</h3>
+                            <p>处理完成后在output.png查看结果</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // 平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
